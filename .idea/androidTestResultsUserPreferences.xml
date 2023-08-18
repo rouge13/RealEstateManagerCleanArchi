@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidTestResultsUserPreferences">
+    <option name="androidTestResultsTableState">
+      <map>
+        <entry key="1286730763">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="3300de3f15d19557" value="120" />
+                  <entry key="Duration" value="90" />
+                  <entry key="RFCRC03FVGF" value="120" />
+                  <entry key="Tests" value="360" />
+                  <entry key="samsung" value="120" />
+                  <entry key="samsung&#10; SM-G781B" value="120" />
+                  <entry key="samsung&#10; SM-T580" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="1944202880">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="RFCRC03FVGF" value="120" />
+                  <entry key="Tests" value="360" />
+                  <entry key="samsung&#10; SM-G781B" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

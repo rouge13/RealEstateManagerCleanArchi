@@ -1,0 +1,417 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_info_property"
+        android:name="com.openclassrooms.realestatemanager.ui.info.InfoPropertyFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:visibility="invisible"
+        tools:layout="@layout/fragment_info_property">
+
+        <ImageButton
+            android:id="@+id/backward_property"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_arrow_back_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/media_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/media_title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date" />
+
+        <Button
+            android:id="@+id/loan_simulator_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loan_simulator_button"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginVertical="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/photo_property_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/navigation_buttons_card"
+            app:layout_constraintTop_toBottomOf="@+id/loan_simulator_button" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/navigation_buttons_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/photo_property_view_pager">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_move_before_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_navigate_before_black_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/image_move_after_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_navigate_next_black_24dp"
+                    app:layout_constraintStart_toEndOf="@+id/image_move_before_button"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/description_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/description_title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/navigation_buttons_card" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/description_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_title" />
+        <!-- Icons, square feet, number of rooms, bathrooms, and bedrooms -->
+        <!-- Square feet CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/square_feet_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <!-- Square feet icon -->
+                <ImageView
+                    android:id="@+id/square_feet_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_surface_black_24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/square_feet_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/square_feet_title"
+                    app:layout_constraintStart_toEndOf="@+id/square_feet_icon"
+                    app:layout_constraintTop_toTopOf="@+id/square_feet_icon" />
+
+                <TextView
+                    android:id="@+id/square_feet_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/square_feet_text"
+                    app:layout_constraintStart_toStartOf="@+id/square_feet_title"
+                    app:layout_constraintTop_toBottomOf="@+id/square_feet_title" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Number of rooms CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/number_of_rooms_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/square_feet_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <!-- Home icon -->
+                <ImageView
+                    android:id="@+id/home_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_home__black_24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_of_rooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/number_of_rooms_title"
+                    app:layout_constraintStart_toEndOf="@+id/home_icon"
+                    app:layout_constraintTop_toTopOf="@+id/home_icon" />
+
+                <TextView
+                    android:id="@+id/rooms_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_rooms_text"
+                    app:layout_constraintStart_toStartOf="@+id/number_of_rooms"
+                    app:layout_constraintTop_toBottomOf="@+id/number_of_rooms" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Number of bathrooms CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/number_of_bathrooms_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <!-- Bathroom icon -->
+                <ImageView
+                    android:id="@+id/bathroom_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bathtub_black_24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_of_bathrooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/number_of_bathrooms_title"
+                    app:layout_constraintStart_toEndOf="@+id/bathroom_icon"
+                    app:layout_constraintTop_toTopOf="@+id/bathroom_icon" />
+
+                <TextView
+                    android:id="@+id/bathrooms_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_bathrooms_text"
+                    app:layout_constraintStart_toStartOf="@+id/number_of_bathrooms"
+                    app:layout_constraintTop_toBottomOf="@+id/number_of_bathrooms" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Number of bedrooms CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/number_of_bedrooms_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/number_of_bathrooms_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <!-- Bedroom icon -->
+                <ImageView
+                    android:id="@+id/bedroom_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bedroom_black_24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_of_bedrooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/number_of_bedrooms_title"
+                    app:layout_constraintStart_toEndOf="@+id/bedroom_icon"
+                    app:layout_constraintTop_toTopOf="@+id/bedroom_icon" />
+
+                <TextView
+                    android:id="@+id/bedrooms_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_bedrooms_text"
+                    app:layout_constraintStart_toStartOf="@+id/number_of_bedrooms"
+                    app:layout_constraintTop_toBottomOf="@+id/number_of_bedrooms" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/location_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/number_of_bedrooms_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!-- Location icon -->
+                <ImageView
+                    android:id="@+id/location_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_location_on_black_24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/location_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/location_title"
+                    app:layout_constraintStart_toEndOf="@+id/location_icon"
+                    app:layout_constraintTop_toTopOf="@+id/location_icon" />
+
+                <TextView
+                    android:id="@+id/location_line1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="@string/location_line1"
+                    app:layout_constraintStart_toStartOf="@id/location_title"
+                    app:layout_constraintTop_toBottomOf="@+id/location_title" />
+
+                <TextView
+                    android:id="@+id/location_line2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/location_line2"
+                    app:layout_constraintStart_toStartOf="@id/location_title"
+                    app:layout_constraintTop_toBottomOf="@+id/location_line1" />
+
+                <TextView
+                    android:id="@+id/location_line3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/location_line3"
+                    app:layout_constraintStart_toStartOf="@id/location_title"
+                    app:layout_constraintTop_toBottomOf="@+id/location_line2" />
+
+                <TextView
+                    android:id="@+id/location_line4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/location_line4"
+                    app:layout_constraintStart_toStartOf="@id/location_title"
+                    app:layout_constraintTop_toBottomOf="@+id/location_line3" />
+
+                <TextView
+                    android:id="@+id/location_line5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/location_line5"
+                    app:layout_constraintStart_toStartOf="@id/location_title"
+                    app:layout_constraintTop_toBottomOf="@+id/location_line4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/property_proximity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/property_proximity_title"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/property_proximity_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location_card" />
+
+        <TextView
+            android:id="@+id/property_proximity_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/property_proximity_text"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/static_map_image_view_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_proximity_title" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/static_map_image_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_proximity_text">
+
+            <ImageView
+                android:id="@+id/static_map_image_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

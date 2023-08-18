@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/nav_settings_utils"
+        android:icon="@drawable/ic_settings_utils_black_24"
+        android:title="@string/set_settings_utils"
+        app:showAsAction="ifRoom"
+        app:actionLayout="@null"/>
+</menu>

@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginVertical="20sp"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancel_button"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_cancel_red_24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/removing_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/red"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cancel_button"
+            android:text="@string/remove_filter"
+            tools:ignore="SmallSp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_for_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20sp"
+            android:text="@string/for_sale_property"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cancel_button" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_sold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20sp"
+            android:text="@string/sold_property"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/switch_for_sale" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/choice_of_property_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/property_pick_date"
+            app:layout_constraintEnd_toEndOf="@id/property_pick_date"
+            app:layout_constraintTop_toBottomOf="@id/removing_filter"
+            android:text="@string/property_date" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_pick_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/choice_of_property_date">
+
+            <Button
+                android:id="@+id/btn_property_date_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginVertical="5sp"
+                android:text="@string/pick_start_date"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SmallSp" />
+
+            <Button
+                android:id="@+id/btn_property_date_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginVertical="5sp"
+                android:layout_marginStart="10sp"
+                android:text="@string/pick_end_date"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@id/btn_property_date_start"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SmallSp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/property_pick_date">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_date_start_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5sp"
+                android:layout_marginStart="5sp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/date_start" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_date_to_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5sp"
+                android:layout_marginStart="5sp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/property_date_start_text"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/date_between" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_date_end_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5sp"
+                android:layout_marginStart="5sp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/property_date_to_text"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/date_end" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/paleGray"
+            app:layout_constraintTop_toBottomOf="@id/property_date_text" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_date_text">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_price_start_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5sp"
+                android:layout_marginStart="10sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/price_start" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_price_start_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/price_start_value"
+                android:digits="0123456789"
+                android:textSize="15sp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/property_price_start_text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_price_to_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5sp"
+                android:layout_marginStart="5sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_price_start_value"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/price_between" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_price_end_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/price_end_value"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/property_price_to_text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_square_feet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_price">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_square_feet_start_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5sp"
+                android:layout_marginStart="10sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/square_feet_start" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_square_feet_start_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/square_feet_start_value"
+                android:digits="0123456789"
+                android:textSize="15sp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/property_square_feet_start_text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_square_feet_to_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_square_feet_start_value"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/square_between" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_square_feet_end_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:digits="0123456789"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_square_feet_to_text"
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="@string/square_feet_end_value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_rooms_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_square_feet">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_rooms_number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/rooms_number" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_rooms_number_start_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/rooms_number_value"
+                android:digits="0123456789"
+                android:textSize="15sp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/property_rooms_number_text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_rooms_number_to_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_rooms_number_start_value"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/rooms_between" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_rooms_number_end_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:digits="0123456789"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_rooms_number_to_text"
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="@string/rooms_number_value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_bedrooms_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_rooms_number">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_bedrooms_number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/bedrooms_number" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_bedrooms_number_start_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bedrooms_number_value"
+                android:digits="0123456789"
+                android:textSize="15sp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/property_bedrooms_number_text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_bedrooms_number_to_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_bedrooms_number_start_value"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/bedrooms_between" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_bedrooms_number_end_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:imeOptions="actionDone"
+                android:digits="0123456789"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_bedrooms_number_to_text"
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="@string/bedrooms_number_value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_bathrooms_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_bedrooms_number">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_bathrooms_number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/bathrooms_number" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_bathrooms_number_start_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bathrooms_number_value"
+                android:textSize="15sp"
+                android:imeOptions="actionDone"
+                android:digits="0123456789"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/property_bathrooms_number_text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_bathrooms_number_to_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_bathrooms_number_start_value"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/bathrooms_between" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_bathrooms_number_end_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bathrooms_number_value"
+                android:imeOptions="actionDone"
+                android:digits="0123456789"
+                android:singleLine="true"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_bathrooms_number_to_text"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_photos_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_bathrooms_number">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_photos_number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/photos_number" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_photos_number_start_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/photos_number_value"
+                android:textSize="15sp"
+                android:imeOptions="actionDone"
+                android:digits="0123456789"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/property_photos_number_text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_photos_number_to_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_photos_number_start_value"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/photos_between" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/property_photos_number_end_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:digits="0123456789"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/property_photos_number_to_text"
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="@string/photos_number_value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/paleGray"
+            app:layout_constraintTop_toBottomOf="@id/property_photos_number" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_type_of_house"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_photos_number">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_type_of_house_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/type_of_house" />
+
+            <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+                android:id="@+id/property_type_of_house_multi_auto_complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:ems="10"
+                android:hint="@string/type_of_house_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.526"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/property_type_of_house_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/paleGray"
+            app:layout_constraintTop_toBottomOf="@id/property_type_of_house" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_agent_seller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_type_of_house">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_agent_seller_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/agent_names" />
+
+            <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+                android:id="@+id/property_agent_seller_multi_auto_complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:ems="10"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:hint="@string/agent_name_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/property_agent_seller_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/paleGray"
+            app:layout_constraintTop_toBottomOf="@id/property_agent_seller" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_boroughs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_agent_seller">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_boroughs_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/boroughs" />
+
+            <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+                android:id="@+id/property_boroughs_multi_auto_complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:ems="10"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:hint="@string/boroughs_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/property_boroughs_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/paleGray"
+            app:layout_constraintTop_toBottomOf="@id/property_boroughs" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_boroughs">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_city_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/city" />
+
+            <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+                android:id="@+id/property_city_multi_auto_complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:ems="10"
+                android:hint="@string/city_hint"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/property_city_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/paleGray"
+            app:layout_constraintTop_toBottomOf="@id/property_city" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/property_proximity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_city">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/property_proximity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/proximity" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20sp"
+                android:text="@string/school"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_park"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20sp"
+                android:text="@string/park"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/switch_school" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20sp"
+                android:text="@string/shopping"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/switch_park" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_transport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20sp"
+                android:text="@string/public_transport"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/switch_shopping" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_restaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20sp"
+                android:text="@string/restaurant"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/switch_transport" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/paleGray"
+            app:layout_constraintTop_toBottomOf="@id/property_proximity" />
+
+        <Button
+            android:id="@+id/search_property"
+            android:layout_marginVertical="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_proximity"
+            android:text="@string/search_property"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

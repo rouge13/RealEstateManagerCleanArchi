@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_utils_selection"
+        android:gravity="center"
+        android:padding="16dp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_currency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp">
+
+        <RadioButton
+            android:id="@+id/radio_button_dollars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dollars_selection" />
+
+        <RadioButton
+            android:id="@+id/radio_button_euros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/euros_selection" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radio_group_date_format"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp">
+
+        <RadioButton
+            android:id="@+id/us_date_format_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_format_us" />
+
+        <RadioButton
+            android:id="@+id/eu_date_format_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_format_eu" />
+    </RadioGroup>
+
+
+</LinearLayout>

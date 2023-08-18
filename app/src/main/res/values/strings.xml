@@ -1,0 +1,174 @@
+<resources>
+    <!-- GENERAL -->
+    <string name="app_name">Real Estate Manager</string>
+    <string name="photo_profile">Agent</string>
+    <string name="text_view_property_agent_name">Name</string>
+    <string name="text_view_property_agent_email">Email</string>
+    <string name="show_map">Show map</string>
+    <string name="logout">Log out</string>
+    <string name="settings">Settings</string>
+    <string name="duplex">Duplex</string>
+    <string name="brooklyn">Brooklyn</string>
+    <string name="price">$13,990,000</string>
+    <string name="take_photo">Take photo</string>
+
+    <!-- PROPERTY_LiST FRAGMENT -->
+    <string name="photo_property">Image property</string>
+
+    <!-- MAP FRAGMENT -->
+
+    <!-- NAVIGATION DRAWER -->
+    <string name="drawer_open">Open the navigation drawer</string>
+    <string name="drawer_close">Close the navigation drawer</string>
+
+    <!-- BOTTOM NAVIGATION VIEW -->
+    <string name="bottom_navigation_menu_map_view">Map View</string>
+    <string name="bottom_navigation_menu_list_view">List View</string>
+
+    <!-- PROPERTY INFO FRAGMENT -->
+    <string name="image_title">Bathroom / Bedroom / Living Room</string>
+    <string name="media_title">Media</string>
+    <string name="date">Selling date : 04/18/2023</string>
+    <string name="description_title">Description</string>
+    <string name="description_text">A flat, also known as an apartment, is a self-contained housing unit that occupies only part of a building. In the United States, flats are typically rented rather than owned, although it is possible to buy a flat in some areas. Flats can vary in size and layout, but they generally include a living area, one or more bedrooms, a bathroom, and a kitchen. Some flats may also have additional amenities, such as a balcony, a laundry room, or a swimming pool. The cost of renting a flat in the US can vary widely depending on the location, size, and quality of the unit.\n</string>
+    <string name="number_of_rooms_title">Number of Rooms</string>
+    <string name="square_feet_title">Square Feet</string>
+    <string name="square_feet_text">750 sq m²</string>
+    <string name="number_of_rooms_text">8</string>
+    <string name="number_of_bathrooms_title">Number of bathrooms</string>
+    <string name="number_of_bathrooms_text">2</string>
+    <string name="number_of_bedrooms_title">Number of Bedrooms</string>
+    <string name="number_of_bedrooms_text">4</string>
+    <string name="location_title">Location</string>
+    <string name="location_line1">740 Park Avenue</string>
+    <string name="location_line2">Apt 6/7A</string>
+    <string name="location_line3">New York</string>
+    <string name="location_line4">NY 10021</string>
+    <string name="location_line5">United States</string>
+    <string name="sold_text">Sold !</string>
+    <string name="gps_enavailable">GPS Unavailable</string>
+    <string name="agent_location">Location</string>
+
+    <!-- PROPERTY SEARCH FRAGMENT -->
+    <string name="sold_property">Sold</string>
+    <string name="property_date">Property date choosed</string>
+    <string name="pick_start_date">Pick start date</string>
+    <string name="pick_end_date">Pick end date</string>
+    <string name="date_start">Date start</string>
+    <string name="date_end">Date end</string>
+    <string name="date_between">between</string>
+    <string name="price_start">Price between:</string>
+    <string name="price_end">Price end :</string>
+    <string name="price_start_value">Enter value</string>
+    <string name="price_end_value">Enter value</string>
+    <string name="square_feet_start">Square feet between :</string>
+    <string name="square_feet_start_value">Enter value</string>
+    <string name="square_between">and</string>
+    <string name="square_feet_end_value">Enter value</string>
+    <string name="rooms_number">Rooms between :</string>
+    <string name="rooms_number_value">Enter value</string>
+    <string name="rooms_between">and</string>
+    <string name="bedrooms_number">Bedrooms between :</string>
+    <string name="bedrooms_number_value">Enter value</string>
+    <string name="bedrooms_between">and</string>
+    <string name="bathrooms_number">Bathrooms between :</string>
+    <string name="bathrooms_number_value">Enter value</string>
+    <string name="bathrooms_between">and</string>
+    <string name="photos_number">Photos between :</string>
+    <string name="photos_number_value">Enter value</string>
+    <string name="photos_between">and</string>
+    <string name="type_of_house">Type of house :</string>
+    <string name="type_of_house_hint">Enter the type of house your looking</string>
+    <string name="agent_names_hint">Enter the agent names</string>
+    <string name="agent_names">Agent(s) name(s)</string>
+    <string name="boroughs">Boroughs</string>
+    <string name="boroughs_hint">Enter boroughs name(s)</string>
+    <string name="city">City : </string>
+    <string name="city_hint">Enter city(ies)</string>
+    <string name="proximity">Select Proximity(ies) :</string>
+    <string name="school">School(s)</string>
+    <string name="park">Park(s)</string>
+    <string name="shopping">Shopping</string>
+    <string name="public_transport">Public transport</string>
+    <string name="restaurant">Restaurant(s)</string>
+    <string name="search_property">Search property(ies)</string>
+    <string name="price_between">and</string>
+    <string name="remove_filter">Remove filter</string>
+    <string name="property_for_sale">For sale</string>
+    <string name="for_sale_property">For sale</string>
+    <string name="cancel_add_property">Cancel</string>
+    <string name="validate_add_property">Validate</string>
+    <string name="property_price">Price : </string>
+    <string name="agent_name">Agent name</string>
+    <string name="photo_description">Photo Description</string>
+    <string name="street_number">Street number : </string>
+    <string name="property_square_feet">Square feet : </string>
+    <string name="property_rooms_count">Number of rooms : </string>
+    <string name="property_bedrooms_count">Number of bedrooms : </string>
+    <string name="property_bathrooms_count">Number of bathrooms : </string>
+    <string name="property_description">Description : </string>
+    <string name="property_type">Type of house : </string>
+    <string name="pick_date">Pick the date</string>
+    <string name="date_to_pick">Waiting date</string>
+    <string name="street_name">Street name : </string>
+    <string name="zip_code">Zip code : </string>
+    <string name="country">Country : </string>
+    <string name="apartment_details">Apartment details : </string>
+    <string name="add_photos">Add photos</string>
+    <string name="remove_photo">Remove photo</string>
+    <string name="add_primary_photo">Add primary photo</string>
+    <string name="agent_last_first_name">Agent name : </string>
+    <string name="agent_name_hint">Enter name</string>
+    <string name="no_property_selected">No property seleted</string>
+    <string name="create_agent">Missing agent !</string>
+    <string name="create_agent_message">Interface for creating a new agent !</string>
+    <string name="agent_name_empty">Agent name empty</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="agent_created">Agent created</string>
+    <string name="no_description">The description can be set later ! But don\'t forget to add one in later time.</string>
+    <string name="no_photo_description">No photo available</string>
+    <string name="property_proximity_title">Proximity(ies) : </string>
+    <string name="property_proximity_text">Proximity</string>
+    <string name="school_proximity">School</string>
+    <string name="park_proximity">Park</string>
+    <string name="shopping_proximity">Shop</string>
+    <string name="restaurant_proximity">Restaurant</string>
+    <string name="public_transport_proximity">Public transport</string>
+    <string name="property_inserted_notification_title">Property Inserted</string>
+    <string name="property_inserted_notification_text">The property has been inserted successfully.</string>
+    <string name="date_sale_if_sold">Sale date if sold : </string>
+    <string name="date_sale">Sale date</string>
+    <string name="address_not_valid">Address isn\'t valid has to be modified</string>
+    <string name="no_proximities">There is no proximities for this property.</string>
+    <string name="loan_simulator">Real Estate loan simulator</string>
+    <string name="loan_amount">Loan amount :</string>
+    <string name="interest_rate_percent">Interest rate (%)</string>
+    <string name="loan_duration_years">Loan duration (years)</string>
+    <string name="monthly_payment">Monthly payement : </string>
+    <string name="calculate">Calculate</string>
+    <string name="loan_simulator_button">Simulator</string>
+    <string name="real_estate_loan_simulator">Real estate loan simulator</string>
+    <string name="primary_photo_set">Primary photo set</string>
+    <string name="personal_contribution">Personal contribution</string>
+    <string name="set_settings_utils">Settings utils</string>
+    <string name="settings_utils_selection">Select Currency and Date Format</string>
+    <string name="settings_utils_currency_value">Edit the currency values if needed</string>
+    <string name="date_format_us">USA date</string>
+    <string name="date_format_eu">EU date</string>
+    <string name="dollars_selection">Dollars</string>
+    <string name="euros_selection">Euros</string>
+    <string name="settings_utils_currency_value_hint">Currency Value</string>
+    <string name="conversion_removed">Default value</string>
+    <string name="description">Description</string>
+    <string name="loan_amount_in_euro">Loan amount in euro :</string>
+    <string name="loan_amount_in_dollar">Loan amount in dollar :</string>
+    <string name="price_start_euro">Price in € between</string>
+    <string name="price_start_dollar">Price in $ between</string>
+    <string name="price_in_euros">Price in euros</string>
+    <string name="price_in_dollars">Price in dollars</string>
+    <string name="exit">Exit</string>
+    <string name="no_internet_connection">No connection available</string>
+
+
+</resources>

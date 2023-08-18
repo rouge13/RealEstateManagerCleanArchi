@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_list_to_info_property"
+    app:startDestination="@id/propertyListFragment">
+
+    <fragment
+        android:id="@+id/propertyListFragment"
+        android:name="com.openclassrooms.realestatemanager.ui.propertyList.PropertyListFragment"
+        android:label="Property List"
+        tools:layout="@layout/fragment_property_list">
+        <action
+            android:id="@+id/action_propertyListFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_propertyListFragment_to_infoPropertyFragment"
+            app:destination="@id/infoPropertyFragment" />
+        <action
+            android:id="@+id/action_propertyListFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_propertyListFragment_to_addAndModifyPropertyFragment"
+            app:destination="@id/addAndModifyPropertyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.openclassrooms.realestatemanager.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search_property">
+        <action
+            android:id="@+id/action_searchFragment_to_propertyListFragment"
+            app:destination="@id/propertyListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAndModifyPropertyFragment"
+        android:name="com.openclassrooms.realestatemanager.ui.addAndModification.AddAndModificationFragment"
+        android:label="AddAndModifyPropertyFragment"
+        tools:layout="@layout/fragment_add_and_modify_property">
+        <action
+            android:id="@+id/action_addAndModifyPropertyFragment_to_propertyListFragment"
+            app:destination="@id/propertyListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.openclassrooms.realestatemanager.ui.map.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map">
+        <action
+            android:id="@+id/action_mapFragment_to_infoPropertyFragment"
+            app:destination="@id/infoPropertyFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_searchFragment"
+            app:destination="@+id/searchFragment"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_mapFragment_to_propertyListFragment"
+            app:destination="@id/propertyListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/infoPropertyFragment"
+        android:name="com.openclassrooms.realestatemanager.ui.property.PropertyInfoFragment"
+        android:label="Property Info"
+        tools:layout="@layout/fragment_info_property">
+        <action
+            android:id="@+id/action_infoPropertyFragment_to_propertyListFragment"
+            app:destination="@id/propertyListFragment" />
+        <action
+            android:id="@+id/action_infoPropertyFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>
+
+
+
